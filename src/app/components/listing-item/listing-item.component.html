@@ -1,0 +1,24 @@
+<div class="listing-items-container">
+    <div class="img-container">
+        <img class="fill-img" [src]="productImg" alt="product-img">
+        <button class="add-to-cart-btn">
+            <span class="btn-text">Add to cart</span>
+            <span class="material-symbols-outlined">add_shopping_cart</span>
+        </button>
+        <div class="quick-controls">
+            <button>
+                <span class="material-symbols-outlined">visibility</span>
+            </button>
+            <button>
+                <span class="material-symbols-outlined">favorite</span>
+            </button>
+        </div>
+        <!-- <div class="controls-container">
+
+        </div> -->
+    </div>
+    <div class="text-container">
+        <h2>{{ productLabel }}</h2>
+        <p *ngIf="productPrice > 0">{{ productPrice | price }}</p>
+    </div>
+</div>

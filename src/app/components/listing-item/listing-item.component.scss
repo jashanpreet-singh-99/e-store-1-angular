@@ -1,0 +1,143 @@
+@import '../../../styles/fonts.scss';
+@import '../../../styles/colors.scss';
+
+
+.listing-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    overflow: hidden;
+
+    .img-container {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s linear;
+        
+        .fill-img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.3s linear;
+            z-index: 1;
+        }
+
+        .quick-controls {
+            position: absolute;
+            margin-top: 16px;
+            right: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            button {
+                background-color: #111111;
+                border: none;
+                padding: 8px;
+                color: #FFFFFF;
+                opacity: 0;
+                transition: 0.3s ease-in;
+                transform: translateX(16px);
+
+                &:hover {
+                    background-color: $color-accent;
+                }
+            }
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            position: absolute;
+            background-color: #111111;
+            color: #FFFFFF;
+            border: none;
+            bottom: 0;
+            z-index: 3;
+            padding: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            transition: 0.3s ease-in;
+            opacity: 0;
+            cursor: pointer;
+
+            .btn-text {
+                @include font-regular($prime-text);
+                font-size: medium;
+            }
+
+            .material-symbols-outlined {
+                font-size: 16px;
+                background-color: #FFFFFF;
+                color: $disabled-text;
+                border-radius: 50%;
+                padding: 4px;
+                transition: 0.3s ease-in;
+            }
+
+            &:hover {
+                background-color: $color-accent;
+
+                .material-symbols-outlined {
+                    background-color: #111111;
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        &:hover {
+            .add-to-cart-btn {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+
+            .quick-controls {
+                button {
+                    opacity: 1;
+                    transform: translateX(-16px);
+                }
+            }
+        }
+    }
+
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s linear;
+
+        h2 {
+            margin: 4px 0;
+            @include font-regular($prime-text, 700);
+            transition: 0.3s linear;
+        }
+    
+        p {
+            margin: 0;
+            color: $disabled-text;
+            @include font-regular($prime-text, 600);
+        }
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+
+        .img-container {
+            .fill-img {
+                transform: Scale(1.1);
+            }
+        }
+        
+        .text-container {
+            h2 {
+                color: $color-accent;
+            }
+        }
+    }
+}

@@ -1,0 +1,249 @@
+<div class="section">
+    <div class="hero-section">
+        <div class="icon-box-container" (click)="navigateCarousal(-1)">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <div class="hero-sub-section-left">
+            <span class="accent-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.accentText }}</span>
+            <span class="title-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.titleText }}</span>
+            <span class="description-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.descriptionText }}</span>
+            <div [@fadeInLeft]="{ value: animationState}">
+                <button class="hero-btn">
+                    <span class="material-symbols-outlined">storefront</span>
+                    <span class="btn-text">SHOP NOW</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-sub-section">
+            <div style="display: flex; flex-direction: row;">
+                <div class="sub-img-section">
+                    <img class="hero-img-small" [src]="selectedHeroOption.smallImg" [@fadeInDown]="{ value: animationState}">
+                </div>
+                <img [src]="selectedHeroOption.bigImg" [@fadeInUp]="{ value: animationState}">
+            </div>
+        </div>
+
+        <div class="icon-box-container" (click)="navigateCarousal(1)">
+            <span class="material-symbols-outlined">arrow_forward</span>
+        </div>
+    </div>
+    <div class="carousal-container">
+        <ng-container *ngFor="let option of heroData">
+            <div class="carousal-btn-container">
+                <button class="carousal-btn" [class.selected]="isActive(option.id)" (click)="navigateToSpecificCarousal(option.id)"></button>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="product-section">
+    <div class="product-sub-section">
+        <product-item 
+            class="product-item-l"
+            [showBtn]="true"
+            [productStock]="47"
+            productLabel="Body Lotion"
+            productImg="/assets/collection-1.jpg">
+        </product-item>
+        <product-item 
+            class="product-item-s"
+            [showBtn]="true"
+            [productStock]="38"
+            productLabel="Skin Tube"
+            productImg="/assets/collection-3.jpg">
+        </product-item>
+    </div>
+    <div class="product-sub-section revered">
+        <product-item 
+            class="product-item-s"
+            [showBtn]="true"
+            [productStock]="37"
+            productLabel="Beauty Soap"
+            productImg="/assets/collection-2.jpg">
+        </product-item>
+        <product-item
+            class="product-item-l"
+            [showBtn]="true"
+            [productStock]="99"
+            productLabel="Face Cleaner"
+            productImg="/assets/collection-4.jpg">
+        </product-item>
+    </div>
+</div>
+<div class="stat-section">
+    <div class="stat-container">
+        <div class="stat-icon-container">
+            <span class="material-symbols-outlined">local_shipping</span>
+        </div>
+        <div class="stat-value-container">
+            <h3>Free Shipping</h3>
+            <p>Order over $200</p>
+        </div>
+    </div>
+    <div class="stat-container">
+        <div class="stat-icon-container">
+            <span class="material-symbols-outlined">credit_card</span>
+        </div>
+        <div class="stat-value-container">
+            <h3>Secure Payment</h3>
+            <p>100% secure payment</p>
+        </div>
+    </div>
+    <div class="stat-container">
+        <div class="stat-icon-container">
+            <span class="material-symbols-outlined">redeem</span>
+        </div>
+        <div class="stat-value-container">
+            <h3>Gift Certificate</h3>
+            <p>Buy now $500 to $1000</p>
+        </div>
+    </div>
+    <div class="stat-container">
+        <div class="stat-icon-container">
+            <span class="material-symbols-outlined">support_agent</span>
+        </div>
+        <div class="stat-value-container">
+            <h3>24/7 Support</h3>
+            <p>Ready support</p>
+        </div>
+    </div>
+</div>
+<div class="new-product-section">
+    <img class="separator" src="/assets/seprator.png" alt="separator">
+    <h1>New Arrival Products</h1>
+    <p>Check Out Our New Arrivals! Fresh styles and must-have items are here – upgrade your wardrobe with the latest trends now. Be the first to own the hottest new looks of the season!</p>
+    <div class="products-row">
+        <ng-container *ngFor="let option of newProductData.slice(0, 4)">
+            <listing-item 
+                class="product-item"
+                [productLabel]="option.label"
+                [productPrice]="option.price"
+                [productImg]="option.img">
+            </listing-item>
+        </ng-container>
+    </div>
+    <div class="products-row m-top">
+        <ng-container *ngFor="let option of newProductData.slice(4, 8)">
+            <listing-item 
+                class="product-item"
+                [productLabel]="option.label"
+                [productPrice]="option.price"
+                [productImg]="option.img">
+            </listing-item>
+        </ng-container>
+    </div>
+</div>
+<div class="new-product-section">
+    <img class="separator" src="/assets/seprator.png" alt="separator">
+    <h1>Our Featured Products</h1>
+    <p>Explore Our Featured Products! Discover the top picks and customer favorites - elevate your style with our standout selections. Don't miss out on the most popular items of the season!</p>
+</div>
+<div class="product-row-section">
+    <carousal [numberOfLayouts]="4" [switchControls]="false" [hoverSwitchNext]="true">
+        <ng-template *ngFor="let option of newProductData">
+            <product-item 
+                class="product-item"
+                [productLabel]="option.label"
+                [productPrice]="option.price"
+                [productImg]="option.img">
+            </product-item>
+        </ng-template>
+    </carousal>
+</div>
+<div class="subscribe-section">
+    <div class="bordered-sub-section">
+        <h1>Sign up now & get 10% off</h1>
+        <p>Become a member today to receive an exclusive 10% discount on your first order, along with access to special promotions and early product releases.</p>
+        <div class="email-container">
+            <div class="email-input-container">
+                <input class="email-box-input" type="text" placeholder="Enter your email address">
+            </div>
+            <button class="sub-btn">
+                <span class="material-symbols-outlined">notifications_active</span>
+                <span>Subscribe Now</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="new-product-section">
+    <img class="separator" src="/assets/seprator.png" alt="separator">
+    <h1>Trending Products</h1>
+    <p>Discover Our Trending Products! Stay ahead of the fashion curve with the hottest items everyone is talking about. Shop the trends and make a statement this season!</p>
+</div>
+<div class="product-row-section">
+    <ng-container *ngFor="let option of productData">
+        <product-item 
+            class="product-item"
+            [productLabel]="option.label"
+            [productPrice]="option.price"
+            [productImg]="option.img">
+        </product-item>
+    </ng-container>
+</div>
+<div class="review-product-section">
+    <div class="new-product-section">
+        <h1>Trusted Customer Feedback</h1>
+        <p>Read Our Trusted Customer Feedback! See what our satisfied customers are saying about their favorite products. Real reviews, real experiences - your guide to shopping with confidence!</p>
+    </div>
+    <div class="reviews-sections">
+        <carousal [numberOfLayouts]="3" [switchControls]="false" [hoverSwitchNext]="true">
+            <ng-template *ngFor="let review of reviewsData">
+                <div class="review-Container">
+                    <p>{{ review.description }}</p>
+                    <div class="author-info">
+                        <h2>{{ review.author }}</h2>
+                        <span> - </span>
+                        <span>{{ review.title }}</span>
+                    </div>
+                    <div class="review">
+                        <span class="material-symbols-outlined selected">star</span>
+                        <span class="material-symbols-outlined selected">star</span>
+                        <span class="material-symbols-outlined selected">star</span>
+                        <span class="material-symbols-outlined selected">star</span>
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                </div>
+            </ng-template>
+        </carousal>
+    </div>
+</div>
+<div class="brand-section">
+    <h2>Our Trusted Branding Partners</h2>
+    <img src="/assets/partner-1.png">
+    <img src="/assets/partner-2.png">
+    <img src="/assets/partner-3.png">
+    <img src="/assets/partner-4.png">
+    <img src="/assets/partner-5.png">
+</div>
+
+<div class="footer-section">
+    <div class="footer-main">
+        <h2>e-Store</h2>
+        <p>Welcome to e-Store! Your go-to destination for the latest in fashion and lifestyle products. We pride ourselves on offering high-quality, trendy items that cater to all your style needs. With exceptional customer service, fast shipping, and exclusive discounts, we ensure a delightful shopping experience. Join our community today and discover why our customers love shopping with us!</p>
+    </div>
+    <div class="footer-options">
+        <div class="options">
+            <h2>Help</h2>
+            <span>Track Your Order</span>
+            <span>Product Guides</span>
+            <span>Wishlist</span>
+            <span>Privacy Policy</span>
+            <span>Store Locator</span>
+        </div>
+        <div class="options">
+            <h2>Company</h2>
+            <span>About Us</span>
+            <span>Contact Us</span>
+            <span>Locate Us</span>
+            <span>Careers</span>
+            <span>Gift Cards</span>
+        </div>
+        <div class="options">
+            <h2>Social Media</h2>
+            <span>Instagram</span>
+            <span>Pinterest</span>
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Phone: +1 (647) 666 0077</span>
+        </div>
+    </div>
+</div>

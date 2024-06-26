@@ -1,0 +1,12 @@
+<div class="product-item-container" [class.margin-l]="imgSize > 0">
+    <img class="fill-img" [src]="productImg" alt="product-img">
+    <div class="text-container">
+        <p class="stock-text" *ngIf="productStock > -1">{{ productStock | items }}</p>
+        <h2>{{ productLabel }}</h2>
+        <p *ngIf="productPrice > 0">{{ productPrice | price }}</p>
+        <button *ngIf="showBtn" class="shop-btn">
+            <span class="material-symbols-outlined">storefront</span>
+            <span class="btn-text">SHOP NOW</span>
+        </button>
+    </div>
+</div>

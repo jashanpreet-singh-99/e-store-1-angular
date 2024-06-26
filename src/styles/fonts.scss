@@ -1,0 +1,8 @@
+$prime-text: "Titillium Web", sans-serif;
+$font-anton: "Anton", sans-serif;
+
+@mixin font-regular($font-family, $font-weight: 400, $font-style: normal) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+}

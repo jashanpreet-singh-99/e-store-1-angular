@@ -1,0 +1,72 @@
+@import '../../../styles/fonts.scss';
+@import '../../../styles/colors.scss';
+
+$nav-gap: 32px;
+$nav-border: 20%;
+
+.nav-container {
+    height: 84px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $nav-border;
+
+    .logo-container {
+        font-size: x-large;
+        @include font-regular($font-anton);
+    }
+
+    .items-container {
+        display: flex;
+        flex-direction: row;
+
+        .nav-links-container {
+            display: flex;
+            flex-direction: row;
+            gap: 36px;
+            align-items: center;
+
+            @include font-regular($prime-text);
+
+            a:hover {
+                color: $color-accent;
+            }
+        }
+
+        .nav-search-container {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            background-color: #F2F2F2;
+            padding: 8px 16px;
+            margin: 0 $nav-gap;
+
+            .search-box-input {
+                font-size: medium;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                text-decoration: none;
+                caret-color: #666666;
+
+                @include font-regular($prime-text);
+            }
+        }
+
+        .nav-control-container {
+            display: flex;
+            flex-direction: row;
+            gap: $nav-gap;
+            align-items: center;
+        }
+    }
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
