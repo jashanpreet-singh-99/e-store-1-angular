@@ -1,0 +1,46 @@
+<div class="container">
+    <img class="separator" src="/assets/seprator.png" alt="separator">
+    <h1>New Arrival Products</h1>
+    <p>Check Out Our New Arrivals! Fresh styles and must-have items are here – upgrade your wardrobe with the latest trends now. Be the first to own the hottest new looks of the season!</p>
+
+    <!-- Large -->
+    <div class="large-products" *ngFor="let option of (0 | range: 2); let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <ng-container *ngFor="let option of newProductData.slice(i * 4, i * 4 + 4)">
+                <listing-item 
+                    class="product-item"
+                    [productLabel]="option.label"
+                    [productPrice]="option.price"
+                    [productImg]="option.img">
+                </listing-item>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Medium -->
+    <div class="medium-products" *ngFor="let option of (0 | range: 4); let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <ng-container *ngFor="let option of newProductData.slice(i * 2, i * 2 + 2)">
+                <listing-item 
+                    class="product-item"
+                    [productLabel]="option.label"
+                    [productPrice]="option.price"
+                    [productImg]="option.img">
+                </listing-item>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Small -->
+    <div class="small-products" *ngFor="let option of newProductData; let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <listing-item 
+                class="product-item"
+                [productLabel]="option.label"
+                [productPrice]="option.price"
+                [productImg]="option.img">
+            </listing-item>
+        </div>
+    </div>
+
+</div>
