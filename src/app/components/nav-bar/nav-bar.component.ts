@@ -31,7 +31,7 @@ enum NavMode{
 })
 export class NavBarComponent {
 
-  state: NavMode = NavMode.Open;
+  state: NavMode = NavMode.Closed;
 
   toggleNavMode(): void {
     this.state = (this.state === NavMode.Open) ? NavMode.Closed : NavMode.Open;
