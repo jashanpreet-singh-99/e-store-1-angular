@@ -1,5 +1,6 @@
 @import '../../../styles/fonts.scss';
 @import '../../../styles/colors.scss';
+@import '../../../styles/dimns.scss';
 
 $hero-margin: 18%;
 $hero-margin-1920: 2%;
@@ -19,14 +20,6 @@ $section-margin-1920: 8%;
         height: 100%;
         padding: 0 $hero-margin;
         align-items: center;
-
-        // @media (min-width: 1920px) {
-        //     padding: 0 $hero-margin;
-        // }
-
-        // @media (min-width: 1440px) {
-        //     padding: 0 $hero-margin-1920;
-        // }
 
         .icon-box-container {
             display: flex;
@@ -166,14 +159,6 @@ $section-margin-1920: 8%;
     gap: 16px;
     margin: 64px $section-margin;
     padding: 56px;
-
-    // @media (min-width: 1920px) {
-    //     margin: 64px $section-margin;
-    // }
-
-    // @media (min-width: 1440px) {
-    //     margin: 64px $section-margin-1920;
-    // }
 
     .product-sub-section {
         flex: 1;
@@ -315,15 +300,6 @@ $section-margin-1920: 8%;
     display: flex;
     flex-direction: column;
 
-    // @media (min-width: 1920px) {
-    //     margin: 64px $section-margin;
-    // }
-
-    // @media (min-width: 1440px) {
-    //     margin: 64px $section-margin-1920;
-    // }
-
-
     .bordered-sub-section {
         margin: 32px;
         border: solid 1px #FFFFFF;
@@ -402,14 +378,6 @@ $section-margin-1920: 8%;
     padding: 64px $section-margin;
     gap: 24px;
 
-    // @media (min-width: 1920px) {
-    //     padding: 64px $section-margin;
-    // }
-
-    // @media (min-width: 1440px) {
-    //     padding: 64px $section-margin-1920;
-    // }
-
 }
 
 .review-product-section {
@@ -417,15 +385,6 @@ $section-margin-1920: 8%;
     flex-direction: column;
     background-color: $stat-section-bg-color;
     padding: 48px $section-margin;
-
-    // @media (min-width: 1920px) {
-    //     padding: 48px $section-margin;
-    // }
-
-    // @media (min-width: 1440px) {
-    //     padding: 48px $section-margin-1920;
-    // }
-
 
     .new-product-section {
 
@@ -510,14 +469,6 @@ $section-margin-1920: 8%;
     display: flex;
     flex-direction: row;
     gap: 64px;
-
-    // @media (min-width: 1920px) {
-    //     padding: 64px $section-margin;
-    // }
-
-    // @media (min-width: 1440px) {
-    //     padding: 64px $section-margin-1920;
-    // }
 
     .footer-main {
         flex: 2;
