@@ -4,177 +4,156 @@
 @import '../../../styles/dimns.scss';
 
 $nav-gap: 32px;
-$nav-border: 20%;
+
+.nav-search-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  background-color: #F2F2F2;
+  padding: 8px 16px;
+  .search-box-input {
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    caret-color: #666666;
+    @include font-regular($prime-text);
+  }
+}
+
+.nav-links-container {
+  @include font-regular($prime-text);
+  a:hover {
+    color: $color-accent;
+  }
+}
 
 .nav-container {
-    height: 84px;
+  height: 84px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo-container {
+    font-size: x-large;
+    @include font-regular($font-anton);
+  }
+
+  .items-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
-    .logo-container {
-        font-size: x-large;
-        @include font-regular($font-anton);
+    .nav-links-container {
+      display: flex;
+      flex-direction: row;
+      gap: $nav-gap;
+      align-items: center;
     }
 
-    .items-container {
-        display: flex;
-        flex-direction: row;
-    
-        .nav-links-container {
-            display: flex;
-            flex-direction: row;
-            gap: $nav-gap;
-            align-items: center;
-    
-            @include font-regular($prime-text);
-    
-            a:hover {
-                color: $color-accent;
-            }
-        }
-    
-        .nav-search-container {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-            background-color: #F2F2F2;
-            padding: 8px 16px;
-            margin: 0 $nav-gap;
-    
-            .search-box-input {
-                font-size: medium;
-                background-color: transparent;
-                border: none;
-                outline: none;
-                text-decoration: none;
-                caret-color: #666666;
-    
-                @include font-regular($prime-text);
-            }
-        }
-    
-        .nav-control-container {
-            display: flex;
-            flex-direction: row;
-            gap: $nav-gap;
-            align-items: center;
-        }
+    .nav-control-container {
+      display: flex;
+      flex-direction: row;
+      gap: $nav-gap;
+      align-items: center;
     }
 
-    .menu-container {
-        display: none;
+    .nav-search-container {
+      margin: 0 $nav-gap;
     }
+  }
+
+  .menu-container {
+    display: none;
+  }
 }
 
 .mobile-menu {
-    display: none;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  .nav-links-container {
+    width: 100%;
+    display: flex;
     flex-direction: column;
+    gap: 16px;
+    background-color: #F2F2F2;
+    padding-left: $nav-gap;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .mobile-items-container {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    overflow: hidden;
+    padding: 16px;
 
-    .nav-links-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        //justify-items: start;
-        background-color: #F2F2F2;
-        padding-left: $nav-gap;
-        padding-top: 16px;
-        padding-bottom: 16px;
-
-
-        @include font-regular($prime-text);
-
-        a:hover {
-            color: $color-accent;
-        }
-    }
-
-    .mobile-items-container {
+    .nav-control-container {
         display: flex;
         flex-direction: row;
+        gap: $nav-gap;
         align-items: center;
-        padding: 16px;
-
-        .nav-search-container {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-            background-color: #F2F2F2;
-            padding: 8px 16px;
-    
-            .search-box-input {
-                font-size: medium;
-                background-color: transparent;
-                border: none;
-                outline: none;
-                text-decoration: none;
-                caret-color: #666666;
-    
-                @include font-regular($prime-text);
-            }
-        }
-
-        .nav-control-container {
-            display: flex;
-            flex-direction: row;
-            gap: $nav-gap;
-            margin: 0 $nav-gap;
-            align-items: center;
-        }
+        gap: $nav-gap;
+        margin-left: $nav-gap;
     }
+  }
 }
 
 .material-symbols-outlined {
-    cursor: pointer;
-    transition: 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s ease;
 
-    &:hover {
-      color: $color-accent;
-    }
+  &:hover {
+    color: $color-accent;
+  }
 }
 
-/* modify for medium to less screen */
+/* Media Queries */
 @media (max-width: $width-lg) {
+  .nav-container {
+    height: 64px;
+  }
 
-    .nav-container {
-        height: 64px;
+  .container {
+    max-width: 90dvw;
+    padding: 0 1rem;
+    justify-content: space-between;
+
+    .logo-container {
+      font-size: large;
     }
 
-    .container {
-        max-width: 90dvw;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        justify-content: space-between;
-
-        .logo-container {
-            font-size: large;
-        }
-
-        .items-container {
-            display: none;
-        }
-
-        .menu-container {
-            display: block;
-        }
-
-        .mobile-menu {
-            display: flex;
-        }
+    .items-container {
+      display: none;
     }
-}
 
-/* modify for medium to less screen */
-@media (max-width: $width-ssm) {
+    .menu-container {
+      display: block;
+    }
 
-    .container {
-        .mobile-items-container {
-            flex-direction: column;
-            gap: 16px;
-        }
+    .mobile-menu {
+      display: flex;
     }
   }
+}
+
+@media (max-width: $width-xl) and (min-width: $width-lg) {
+  .container {
+    padding: 0 0.5rem;
+
+    .logo-container {
+      font-size: large;
+    }
+  }
+}
+
+@media (max-width: $width-ssm) {
+  .container .mobile-items-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
