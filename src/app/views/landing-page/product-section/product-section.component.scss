@@ -1,0 +1,54 @@
+@import '../../../../styles/dimns.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: $section-margin-top 0;
+
+    .product-sub-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-left: $section-margin-top;
+        padding-right: 0px;
+
+        &.revered {
+            align-items: flex-end;
+            padding-left: 0;
+            padding-right: $section-margin-top;
+        }
+
+        .product-item-s {
+            height: 80%;
+            width: 80%;
+        }
+
+        .product-item-l {
+            height: 100%;
+            width: 100%; 
+        }
+    }
+}
+
+@media (max-width: $width-md) {
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .product-sub-section {
+            padding-left: 0;
+
+            &.revered {
+                padding-right: 0;
+            }
+
+            .product-item-s {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+}

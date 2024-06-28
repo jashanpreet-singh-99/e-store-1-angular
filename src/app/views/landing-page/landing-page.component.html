@@ -1,77 +1,7 @@
 <hero-section-v1></hero-section-v1>
 
-<!--
-<div class="section">
-    <div class="hero-section">
-        <div class="icon-box-container" (click)="navigateCarousal(-1)">
-            <span class="material-symbols-outlined">arrow_back</span>
-        </div>
-        <div class="hero-sub-section-left">
-            <span class="accent-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.accentText }}</span>
-            <span class="title-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.titleText }}</span>
-            <span class="description-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.descriptionText }}</span>
-            <div [@fadeInLeft]="{ value: animationState}">
-                <button class="hero-btn">
-                    <span class="material-symbols-outlined">storefront</span>
-                    <span class="btn-text">SHOP NOW</span>
-                </button>
-            </div>
-        </div>
-        <div class="hero-sub-section">
-            <div style="display: flex; flex-direction: row;">
-                <div class="sub-img-section">
-                    <img class="hero-img-small" [src]="selectedHeroOption.smallImg" [@fadeInDown]="{ value: animationState}">
-                </div>
-                <img [src]="selectedHeroOption.bigImg" [@fadeInUp]="{ value: animationState}">
-            </div>
-        </div>
-
-        <div class="icon-box-container" (click)="navigateCarousal(1)">
-            <span class="material-symbols-outlined">arrow_forward</span>
-        </div>
-    </div>
-    <div class="carousal-container">
-        <ng-container *ngFor="let option of heroData">
-            <div class="carousal-btn-container">
-                <button class="carousal-btn" [class.selected]="isActive(option.id)" (click)="navigateToSpecificCarousal(option.id)"></button>
-            </div>
-        </ng-container>
-    </div>
-</div>
-<div class="product-section container">
-    <div class="product-sub-section">
-        <product-item 
-            class="product-item-l"
-            [showBtn]="true"
-            [productStock]="47"
-            productLabel="Body Lotion"
-            productImg="/assets/collection-1.jpg">
-        </product-item>
-        <product-item 
-            class="product-item-s"
-            [showBtn]="true"
-            [productStock]="38"
-            productLabel="Skin Tube"
-            productImg="/assets/collection-3.jpg">
-        </product-item>
-    </div>
-    <div class="product-sub-section revered">
-        <product-item 
-            class="product-item-s"
-            [showBtn]="true"
-            [productStock]="37"
-            productLabel="Beauty Soap"
-            productImg="/assets/collection-2.jpg">
-        </product-item>
-        <product-item
-            class="product-item-l"
-            [showBtn]="true"
-            [productStock]="99"
-            productLabel="Face Cleaner"
-            productImg="/assets/collection-4.jpg">
-        </product-item>
-    </div>
-</div>
+<product-section></product-section>
+<!-- 
 <div class="stat-section">
     <div class="stat-container">
         <div class="stat-icon-container">
@@ -109,7 +39,8 @@
             <p>Ready support</p>
         </div>
     </div>
-</div>
+</div> -->
+<!--
 <div class="new-product-section">
     <img class="separator" src="/assets/seprator.png" alt="separator">
     <h1>New Arrival Products</h1>

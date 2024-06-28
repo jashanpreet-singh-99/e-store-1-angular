@@ -20,6 +20,8 @@ $offset-lg: 32px;
 $offset-xl: 30px;
 $offset-2xl: 30px;
 
+$section-margin-top: 56px;
+
 @function calc-max-width($width, $offset) {
     @return calc(#{$width} - #{$offset});
 }
