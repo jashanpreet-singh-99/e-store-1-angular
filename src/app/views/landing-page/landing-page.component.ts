@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductItemComponent } from "../../components/product-item/product-item.component";
 import { ListingItemComponent } from "../../components/listing-item/listing-item.component";
 import { CarousalComponent } from "../../components/carousal/carousal.component";
+import { HeroSectionV1Component } from "./hero-section-v1/hero-section-v1.component";
 
 @Component({
     selector: 'app-landing-page',
@@ -54,7 +55,7 @@ import { CarousalComponent } from "../../components/carousal/carousal.component"
             ]),
         ])
     ],
-    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent]
+    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component]
 })
 export class LandingPageComponent implements OnInit {
   

@@ -1,0 +1,259 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.container {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-container {
+  width: 100%;
+  background-color: $hero-section-bg-color;
+}
+
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+  align-items: center;
+  gap: 32px;
+
+  .icon-box-container {
+    display: flex;
+    padding: 24px;
+    background-color: #FFFFFF;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover, &:active {
+      background-color: $color-accent;
+      color: #FFFFFF;
+    }
+  }
+
+  .hero-sub-section-1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: clip;
+    padding: 16px 0;
+
+    .accent-text,
+    .description-text,
+    .title-text {
+      @include font-regular($prime-text);
+    }
+
+    .accent-text {
+      color: $color-accent;
+      font-size: x-large;
+    }
+
+    .title-text {
+      font-size: 4em;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .description-text {
+      color: $disabled-text;
+      font-size: x-large;
+    }
+
+    .hero-btn {
+      display: flex;
+      background-color: #111111;
+      color: #FFFFFF;
+      padding: 12px 24px;
+      gap: 12px;
+      align-items: center;
+      border: none;
+      transition: 0.3s ease-in;
+
+      .btn-text {
+        font-size: large;
+        font-weight: 600;
+      }
+
+      .material-symbols-outlined {
+        font-size: 24px;
+      }
+
+      &:hover, &:active {
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  .hero-sub-section-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    position: relative;
+    overflow: hidden;
+    padding: 32px 0;
+
+    .sub-img-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height: 100%;
+
+      .hero-img-small {
+        height: 60%;
+        position: absolute;
+        left: 0;
+        z-index: 2;
+      }
+    }
+
+    .hero-img-lg {
+      width: 90%;
+    }
+  }
+}
+
+.carousal-controls {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .icon-box-container {
+    display: flex;
+    padding: 24px;
+    background-color: #FFFFFF;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover, &:active {
+      background-color: $color-accent;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.carousal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 8px;
+  bottom: 0;
+
+  .carousal-btn-container {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #66666666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .carousal-btn {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      transition: 0.3s ease-in;
+      background-color: #666666;
+      cursor: pointer;
+
+      &.selected,
+      &:hover {
+        background-color: $color-accent;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@media (max-width: $width-lg) {
+  .container {
+    .hero-section {
+      flex-direction: column;
+      align-items: end;
+      gap: 0;
+
+      .icon-box-container {
+        display: none;
+      }
+
+      .hero-sub-section-1 {
+        gap: 8px;
+
+        .accent-text,
+        .description-text,
+        .title-text {
+          font-size: large;
+        }
+
+        .title-text {
+          font-size: 3em;
+          line-height: 1em;
+        }
+
+        .hero-btn {
+          padding: 8px 16px;
+          gap: 8px;
+
+          .btn-text {
+            font-size: medium;
+          }
+
+          .material-symbols-outlined {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .hero-sub-section-2 {
+        height: 50%;
+        padding-bottom: 4px;
+
+        .sub-img-section {
+          width: 25%;
+
+          .hero-img-small {
+            margin-right: -25%;
+            z-index: 1;
+            object-fit: cover;
+          }
+        }
+
+        .hero-img-lg {
+          width: 75%;
+        }
+      }
+    }
+
+    .carousal-controls {
+      display: flex;
+
+      .icon-box-container {
+        padding: 8px;
+
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

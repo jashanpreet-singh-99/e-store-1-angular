@@ -1,0 +1,46 @@
+<div class="background-container">
+    <div class="container">
+        <div class="hero-section">
+            <div class="icon-box-container" (click)="navigateCarousal(-1)">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <div class="hero-sub-section-1">
+                <span class="accent-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.accentText }}</span>
+                <span class="title-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.titleText }}</span>
+                <span class="description-text" [@fadeInLeft]="{ value: animationState}">{{ selectedHeroOption.descriptionText }}</span>
+                <div [@fadeInLeft]="{ value: animationState}">
+                    <button class="hero-btn">
+                        <span class="material-symbols-outlined">storefront</span>
+                        <span class="btn-text">SHOP NOW</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-sub-section-2">
+                <div style="display: flex; flex-direction: row;">
+                    <div class="sub-img-section">
+                        <img class="hero-img-small" [src]="selectedHeroOption.smallImg" [@fadeInDown]="{ value: animationState}">
+                    </div>
+                    <img class="hero-img-lg" [src]="selectedHeroOption.bigImg" [@fadeInUp]="{ value: animationState}">
+                </div>
+            </div>
+            <div class="icon-box-container" (click)="navigateCarousal(1)">
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+        </div>
+        <div class="carousal-controls">
+            <div class="icon-box-container" (click)="navigateCarousal(-1)">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <div class="icon-box-container" (click)="navigateCarousal(1)">
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+        </div>
+        <div class="carousal-container">
+            <ng-container *ngFor="let option of heroData">
+                <div class="carousal-btn-container">
+                    <button class="carousal-btn" [class.selected]="isActive(option.id)" (click)="navigateToSpecificCarousal(option.id)"></button>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
