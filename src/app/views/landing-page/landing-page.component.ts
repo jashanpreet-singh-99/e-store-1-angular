@@ -8,6 +8,7 @@ import { HeroSectionV1Component } from "./hero-section-v1/hero-section-v1.compon
 import { ProductSectionComponent } from "./product-section/product-section.component";
 import { FeaturesSectionComponent } from "./features-section/features-section.component";
 import { NewArrivalSectionComponent } from "./new-arrival-section/new-arrival-section.component";
+import { FeaturedProductsSectionComponent } from "./featured-products-section/featured-products-section.component";
 
 @Component({
     selector: 'app-landing-page',
@@ -58,7 +59,7 @@ import { NewArrivalSectionComponent } from "./new-arrival-section/new-arrival-se
             ]),
         ])
     ],
-    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent]
+    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent, FeaturedProductsSectionComponent]
 })
 export class LandingPageComponent implements OnInit {
   
