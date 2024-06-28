@@ -1,0 +1,125 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.background-container {
+    width: 100%;
+    padding: 72px 0;
+    background-color: $stat-section-bg-color;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+
+    .container-row {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+
+        .stat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+
+            .stat-icon-container {
+                width: 42px;
+                height: 42px;
+                padding: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: #F5F5F5;
+                transition: 0.5s ease;
+
+
+                &:hover {
+                    color: #F5F5F5;
+                    background-color: $color-accent;
+                }
+            }
+
+            .stat-value-container {
+                display: flex;
+                flex-direction: column;
+                margin-left: 24px;
+
+                h3 {
+                    margin: 0;
+                    @include font-regular($prime-text, 700);
+                    font-size: x-large;
+                }
+
+                p {
+                    margin-top: 4px;
+                    color: #888888;
+                    @include font-regular($prime-text);
+                    font-size: medium;
+                }
+            }
+
+            &:hover {
+                .stat-icon-container {
+                    color: #F5F5F5;
+                    background-color: $color-accent;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-xl) {
+    .container {
+        .container-row {
+            .stat-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                .stat-value-container {
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-lg) {
+    .container {
+        flex-direction: column;
+        gap: 32px;
+
+        .container-row {
+            .stat-container {
+                .stat-value-container {
+                    text-align: center;
+                    h3 {
+                        font-size: large;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-sm) {
+    .container {
+        .container-row {
+            .stat-container {
+                .stat-value-container {
+                    text-align: center;
+                    h3 {
+                        font-size: medium;
+                    }
+
+                    p {
+                        font-size: small;
+                    }
+                }
+            }
+        }
+    }
+}
