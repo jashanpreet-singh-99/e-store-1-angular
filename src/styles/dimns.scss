@@ -11,6 +11,8 @@ $width-lg: 1024px;
 $width-xl: 1280px;
 $width-2xl: 1536px;
 
+$width-ssm: 478px;
+
 $offset-xs: 24px;
 $offset-sm: 32px;
 $offset-md: 32px;
@@ -28,6 +30,13 @@ $offset-2xl: 30px;
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+
+.non-selectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* xs */

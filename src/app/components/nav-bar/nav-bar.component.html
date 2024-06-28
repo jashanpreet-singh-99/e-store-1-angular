@@ -1,8 +1,32 @@
-<div class="nav-container container">
-    <div class="logo-container anton-regular">
-        e-Store
+<div class="container">
+    <div class="nav-container">
+        <div class="logo-container anton-regular">
+            e-Store
+        </div>
+        <div class="items-container">
+            <div class="nav-links-container">
+                <a>HOME</a>
+                <a>SHOP</a>
+                <a>MEN</a>
+                <a>WOMEN</a>
+                <a>GALLERY</a>
+                <a>CONTACT</a>
+            </div>
+            <div class="nav-search-container">
+                <input class="search-box-input" type="text" placeholder="Search for products">
+                <span class="material-symbols-outlined non-selectable">search</span>
+            </div>
+            <div class="nav-control-container">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">person</span>
+            </div>
+        </div>
+        <div class="menu-container" (click)="toggleNavMode()">
+            <span class="material-symbols-outlined non-selectable">{{ NavMenuIcon }}</span>
+        </div>
     </div>
-    <div class="items-container">
+    <div *ngIf="showMobileMenu" class="mobile-menu" @expandCollapse>
         <div class="nav-links-container">
             <a>HOME</a>
             <a>SHOP</a>
@@ -11,17 +35,16 @@
             <a>GALLERY</a>
             <a>CONTACT</a>
         </div>
-        <div class="nav-search-container">
-            <input class="search-box-input" type="text" placeholder="Search for products">
-            <span class="material-symbols-outlined">search</span>
+        <div class="mobile-items-container">
+            <div class="nav-search-container">
+                <input class="search-box-input" type="text" placeholder="Search for products">
+                <span class="material-symbols-outlined non-selectable">search</span>
+            </div>
+            <div class="nav-control-container">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="material-symbols-outlined">favorite</span>
+                <span class="material-symbols-outlined">person</span>
+            </div>
         </div>
-        <div class="nav-control-container">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span class="material-symbols-outlined">favorite</span>
-            <span class="material-symbols-outlined">person</span>
-        </div>
-    </div>
-    <div class="menu-container">
-        <span class="material-symbols-outlined">menu</span>
     </div>
 </div>
