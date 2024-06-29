@@ -1,0 +1,45 @@
+<div class="container">
+    <img class="separator" src="/assets/seprator.png" alt="separator">
+    <h1>Trending Products</h1>
+    <p>Discover Our Trending Products! Stay ahead of the fashion curve with the hottest items everyone is talking about. Shop the trends and make a statement this season!</p>
+
+    <!-- Large -->
+    <div class="large-products" *ngFor="let option of (0 | range: 2); let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <ng-container *ngFor="let option of productData.slice(i * 4, i * 4 + 4)">
+                <product-item 
+                    class="product-item"
+                    [productLabel]="option.label"
+                    [productPrice]="option.price"
+                    [productImg]="option.img">
+                </product-item>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Medium -->
+    <div class="medium-products" *ngFor="let option of (0 | range: 4); let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <ng-container *ngFor="let option of productData.slice(i * 2, i * 2 + 2)">
+                <product-item 
+                    class="product-item"
+                    [productLabel]="option.label"
+                    [productPrice]="option.price"
+                    [productImg]="option.img">
+                </product-item>
+            </ng-container>
+        </div>
+    </div>
+
+    <!-- Small -->
+    <div class="small-products" *ngFor="let option of productData; let i = index">
+        <div class="products-row m-top" [class.m-top]="i > 0">
+            <product-item 
+                class="product-item"
+                [productLabel]="option.label"
+                [productPrice]="option.price"
+                [productImg]="option.img">
+            </product-item>
+        </div>
+    </div>
+</div>

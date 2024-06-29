@@ -10,6 +10,7 @@ import { FeaturesSectionComponent } from "./features-section/features-section.co
 import { NewArrivalSectionComponent } from "./new-arrival-section/new-arrival-section.component";
 import { FeaturedProductsSectionComponent } from "./featured-products-section/featured-products-section.component";
 import { SubscribeSectionComponent } from "./subscribe-section/subscribe-section.component";
+import { TrendingSectionComponent } from "./trending-section/trending-section.component";
 
 @Component({
     selector: 'app-landing-page',
@@ -60,7 +61,7 @@ import { SubscribeSectionComponent } from "./subscribe-section/subscribe-section
             ]),
         ])
     ],
-    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent, FeaturedProductsSectionComponent, SubscribeSectionComponent]
+    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent, FeaturedProductsSectionComponent, SubscribeSectionComponent, TrendingSectionComponent]
 })
 export class LandingPageComponent implements OnInit {
   
@@ -111,7 +112,7 @@ export class LandingPageComponent implements OnInit {
       'price': 100,
       'id': 4
     }
-  ]
+  ];
 
   newProductData = [
     {

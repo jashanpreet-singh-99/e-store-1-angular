@@ -1,0 +1,90 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $section-margin-top;
+
+    h1 {
+        @include font-regular($prime-text, 700);
+        font-size: xx-large;
+    }
+
+    p {
+        margin: 0;
+        line-height: 2em;
+        max-width: 60%;
+        text-align: center;
+        color: $disabled-text;
+
+        @include font-regular($prime-text, 400);
+        font-size: large;
+    }
+
+    .large-products {
+        display: flex;
+    }
+
+    .medium-products {
+        display: none;
+    }
+
+    .small-products {
+        display: none;
+    }
+
+    .products-row {
+        display: flex;
+        flex-direction: row;
+        margin: 32px 0;
+        gap: 32px;
+
+        &.m-top {
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: $width-lg) {
+    .container {
+        h1 {
+            font-size: x-large;
+        }
+
+        p {
+            max-width: 100%;
+            font-size: medium;
+        }
+
+        .large-products {
+            display: none;
+        }
+
+        .medium-products {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: $width-sm) {
+    .container {
+        h1 {
+            font-size: large;
+        }
+
+        p {
+            max-width: 100%;
+            font-size: small;
+        }
+
+        .medium-products {
+            display: none;
+        }
+        .small-products {
+            display: flex;
+        }
+    }
+}
