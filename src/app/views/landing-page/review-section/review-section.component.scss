@@ -1,0 +1,141 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+
+.bg-container {
+    background-color: $stat-section-bg-color;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $section-margin-top 0;
+
+    h1 {
+        @include font-regular($prime-text, 700);
+        font-size: xx-large;
+    }
+
+    p {
+        margin: 0;
+        line-height: 2em;
+        max-width: 60%;
+        text-align: center;
+        color: $disabled-text;
+
+        @include font-regular($prime-text, 400);
+        font-size: large;
+    }
+
+    .large-products {
+        display: flex;
+    }
+
+    .medium-products {
+        display: none;
+    }
+
+    .small-products {
+        display: none;
+    }
+
+    .reviews-sections {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        margin-top: 32px;
+
+        .review-Container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 24px;
+            background-color: #FFFFFF;
+            transition: 0.3s ease-out;
+            border: solid 1px #FFFFFF;
+            height: 100%;
+
+            p {
+                text-align: justify;
+                max-width: 100%;
+                @include font-regular($prime-text);
+            }
+
+            .author-info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                h2 {
+                    margin: 8px 0;
+
+                    @include font-regular($prime-text, 700);
+                    font-size: large;
+                }
+
+                span {
+                    color: $disabled-text;
+                    margin: 0 4px;
+
+                    @include font-regular($prime-text, 400);
+                    font-size: medium;
+                }
+            }
+
+            .review {
+                color: $disabled-text;
+
+                .selected {
+                    color: $review-color;
+                }
+            }
+
+            &:hover {
+                border: solid 1px $color-accent;
+            }
+        }
+    }
+}
+
+@media (max-width: $width-xl) {
+    .container {
+        h1 {
+            font-size: x-large;
+        }
+
+        p {
+            max-width: 100%;
+            font-size: medium;
+        }
+
+        .large-products {
+            display: none;
+        }
+
+        .medium-products {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: $width-md) {
+    .container {
+        h1 {
+            font-size: large;
+        }
+
+        p {
+            max-width: 100%;
+            font-size: small;
+        }
+
+        .medium-products {
+            display: none;
+        }
+        .small-products {
+            display: flex;
+        }
+    }
+}

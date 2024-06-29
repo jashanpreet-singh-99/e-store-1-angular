@@ -11,6 +11,7 @@ import { NewArrivalSectionComponent } from "./new-arrival-section/new-arrival-se
 import { FeaturedProductsSectionComponent } from "./featured-products-section/featured-products-section.component";
 import { SubscribeSectionComponent } from "./subscribe-section/subscribe-section.component";
 import { TrendingSectionComponent } from "./trending-section/trending-section.component";
+import { ReviewSectionComponent } from "./review-section/review-section.component";
 
 @Component({
     selector: 'app-landing-page',
@@ -61,7 +62,7 @@ import { TrendingSectionComponent } from "./trending-section/trending-section.co
             ]),
         ])
     ],
-    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent, FeaturedProductsSectionComponent, SubscribeSectionComponent, TrendingSectionComponent]
+    imports: [CommonModule, ProductItemComponent, ListingItemComponent, CarousalComponent, HeroSectionV1Component, ProductSectionComponent, FeaturesSectionComponent, NewArrivalSectionComponent, FeaturedProductsSectionComponent, SubscribeSectionComponent, TrendingSectionComponent, ReviewSectionComponent]
 })
 export class LandingPageComponent implements OnInit {
   
@@ -196,7 +197,7 @@ export class LandingPageComponent implements OnInit {
       title: 'Loyal Customer',
       rating: 5
     }
-  ]
+  ];
   
   ngOnInit(): void {
     this.triggerAnimation();
