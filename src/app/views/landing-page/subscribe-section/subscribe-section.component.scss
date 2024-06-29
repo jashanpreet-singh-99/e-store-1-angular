@@ -1,0 +1,173 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.container {
+
+    .subscribe-section {
+        background-image: url("/assets/sub-bg-2.jpg");
+        background-size: cover;
+    
+        margin: 56px;
+        background-color: #111111;
+        display: flex;
+        flex-direction: column;
+
+        .bordered-sub-section {
+            margin: 32px;
+            border: solid 1px #FFFFFF;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+    
+            h1 {
+                margin: 4px 0;
+                @include font-regular($prime-text, 700);
+                font-size: xxx-large;
+            }
+    
+            p {
+                width: 60%;
+                @include font-regular($prime-text);
+                font-size: medium;
+                max-lines: 2;
+            }
+    
+            .email-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: auto;
+                margin-top: 8px;
+    
+                .email-input-container {
+                    background-color: #FFFFFF;
+                    padding: 16px 24px;
+                    border: none;
+    
+                    .email-box-input {
+                        font-size: medium;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        text-decoration: none;
+                        caret-color: #666666;
+                        margin-right: 24px;
+            
+                        @include font-regular($prime-text);
+                    }
+                }
+        
+                .sub-btn {
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 12px;
+                    background-color: $color-accent;
+                    border: none;
+                    color: #F5F5F5;
+        
+                    .material-symbols-outlined {
+                        font-size: 24px;
+                    }
+        
+                    span {
+                        font-size: medium;
+                    }
+        
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@media (max-width: $width-xl) {
+    .container {
+        .subscribe-section {
+            margin: 48px 0;
+            .bordered-sub-section {
+                padding: 48px;
+
+                h1 {
+                    font-size: xx-large;
+                }
+
+                p {
+                    width: 60%;
+                    font-size: small;
+                    max-lines: 2;
+                }
+
+                .email-container {
+                    .email-input-container .email-box-input {
+                        font-size: small;
+                    }
+
+                    .sub-btn {
+                        .material-symbols-outlined {
+                            font-size: 20px;
+                        }
+
+                        span{
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-md) {
+    .container {
+        .subscribe-section {
+            margin: 32px 0;
+            .bordered-sub-section {
+                padding: 8px;
+                margin: 8px;
+                background-color: #88888833;
+
+                h1 {
+                    font-size: large;
+                }
+
+                p {
+                    width: 100%;
+                }
+
+                .email-container {
+                    padding: 4px 8px;
+
+                    .email-input-container {
+                        background-color: #FFFFFF;
+                        padding: 8px 8px;
+                        border: none;
+        
+                        .email-box-input {
+                            font-size: small;
+                            margin-right: 12px;
+                        }
+                    }
+
+                    .sub-btn {
+                        padding: 12px 4px;
+                        gap: 4px;
+
+                        .material-symbols-outlined {
+                            font-size: 16px;
+                        }
+            
+                        span {
+                            font-size: small;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
