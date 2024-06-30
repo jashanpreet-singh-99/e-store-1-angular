@@ -77,44 +77,40 @@ export class HeroSectionV1Component implements OnInit {
   animationState: string = 'start';
   selectedHero: number = 1;
 
-  ngOnInit(): void {
-    this.triggerAnimation();
+  async ngOnInit() {
+    await this.triggerAnimation();
   }
-
-  triggerAnimation(time:number = 50, state: string = 'end'): void {
-    setTimeout(() => {
-      this.animationState = state;
-      console.log('Animation triggered');
-    }, time);
+  
+  get selectedHeroOption() {
+    return this.heroData[this.selectedHero];
   }
 
   isActive(option: number): boolean {
     return this.selectedHero == option;
   }
 
-  get selectedHeroOption() {
-    return this.heroData[this.selectedHero];
+  async navigateCarousal(direction: number) {
+    this.animationState ='fade';
+
+    await this.triggerAnimation(500, 'start');
+    this.selectedHero = (this.selectedHero + direction + this.heroData.length) % this.heroData.length;
+    await this.triggerAnimation(150, 'end');
   }
 
-  navigateCarousal(direction: number) {
+  async navigateToSpecificCarousal(value: number) {
     this.animationState ='fade';
-    this.selectedHero += direction;
 
-    if (this.selectedHero < 0) {
-      this.selectedHero = this.heroData.length - 1;
-    } else if (this.selectedHero > this.heroData.length - 1) {
-      this.selectedHero = 0;
-    }
-
-    this.triggerAnimation(500, 'start');
-    this.triggerAnimation(650, 'end');
-  }
-
-  navigateToSpecificCarousal(value: number) {
-    this.animationState ='fade';
+    await this.triggerAnimation(500, 'start');
     this.selectedHero = value;
-    this.triggerAnimation(500, 'start');
-    this.triggerAnimation(650, 'end');
+    await this.triggerAnimation(150, 'end');
   }
 
+  private delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  private async triggerAnimation(time: number = 50, state: string = 'end') {
+    await this.delay(time);
+    this.animationState = state;
+  }
 }
