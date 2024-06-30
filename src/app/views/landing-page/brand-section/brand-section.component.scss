@@ -1,0 +1,56 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.brand-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 42px;
+
+    h2 {
+        margin-right: 16px;
+        @include font-regular($prime-text, 600);
+    }
+
+    .brand-names {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+
+        img {
+            max-width: 25%;
+        }
+    }
+}
+
+@media (max-width: $width-xl) {
+
+    .brand-section {
+        flex-direction: column;
+
+        .brand-names {
+            width: 100%;
+            gap: 32px;
+        }
+    }
+
+}
+
+@media (max-width: $width-md) {
+
+    h2 {
+        font-size: large;
+    }
+
+    .brand-names {
+        gap: 16px;
+    }
+}
