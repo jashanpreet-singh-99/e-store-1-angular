@@ -27,6 +27,11 @@
 
         img {
             max-width: 25%;
+            transition: all 0.5s cubic-bezier(0.57, 0.4, 0.55, 1.17); 
+
+            &:hover {
+                transform: scale(0.9);
+            }
         }
     }
 }

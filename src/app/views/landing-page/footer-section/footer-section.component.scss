@@ -1,0 +1,108 @@
+@import '../../../../styles/fonts.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/dimns.scss';
+
+.footer-section {
+    width: 100%;
+    margin-top: 32px;
+    background-color: $footer-color;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        .footer-main {
+            flex: 2;
+            gap: 16px;
+    
+            h2 {
+                margin-bottom: 16px;
+                @include font-regular($prime-text, 700);
+            }
+    
+            p {
+                color: $disabled-text;
+                @include font-regular($prime-text);
+                text-align: justify;
+            }
+
+            a {
+                color: $disabled-text;
+                @include font-regular($prime-text);
+                text-decoration: overline;
+                transition: 0.3s ease;
+
+                &:hover {
+                    color: $color-accent;
+                    transform: scale(1.1);
+                }
+            }
+
+
+        }
+
+        .footer-options {
+            flex: 3;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .options {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+    
+                h2 {
+                    margin-bottom: 16px;
+                    @include font-regular($prime-text, 700);
+                }
+    
+                span {
+                    color: $disabled-text;
+                    @include font-regular($prime-text);
+                    cursor: pointer;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        color: $color-accent;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    .separator {
+        height: 1px;
+        width: 100%;
+        background-color: #DDDDDD;
+        margin-top: 48px;
+    }
+}
+
+@media (max-width: $width-lg) {
+
+    .footer-section { 
+        .container {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: $width-sm) {
+
+    .options {
+
+        h2 {
+            margin-bottom: 0;
+            font-size: medium;
+        }
+        
+        span {
+            font-size: small;
+        }
+    }
+}
