@@ -1,6 +1,6 @@
 # 🌟 Angular e-Store 🌟
 
-![Banner](screenshots/banner.png)
+![Banner](screenshots/banner-low-res.jpg)
 
 Welcome to the **Angular e-Store** repository! This project showcases my skills in **CSS3**, **SCSS**, **HTML5**, and **Angular**. It's designed to provide a delightful and responsive user experience across all devices, including mobile, tablet, and desktop. Dive in to explore sleek animations, responsive designs, and a modern UI that adapts seamlessly to any screen size. 
 
